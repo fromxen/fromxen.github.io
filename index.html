@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="XEN. — A collection of moments, places, and stories through photographs.">
+<title>XEN. — A Collection of Moments</title>
+<style>
+:root{--paper:#f8f7f3;--ink:#25241f;--muted:#77736b;--line:#e3e0d9;--soft:#e7e4dc}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit}button{font:inherit}header{max-width:1150px;margin:auto;padding:28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.logo{font:700 30px Georgia,serif;letter-spacing:-1.5px;text-decoration:none}nav{display:flex;gap:26px}nav a{font-size:12px;text-transform:uppercase;letter-spacing:2px;text-decoration:none}main{max-width:1150px;margin:auto;padding:0 28px}.hero{text-align:center;padding:108px 0 88px}.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;color:var(--muted)}h1{font:normal clamp(62px,12vw,140px)/.95 Georgia,serif;letter-spacing:-6px;margin:22px 0}.hero p{font:italic 20px Georgia,serif;color:var(--muted)}.feature{height:350px;background:var(--soft);display:flex;align-items:center;justify-content:center;text-align:center;color:#6c675e;font:italic 19px Georgia,serif;padding:25px;background-size:cover;background-position:center}.feature.has-photo{color:white;text-shadow:0 2px 10px #0008}section{padding:92px 0}h2{font:normal clamp(31px,5vw,43px) Georgia,serif;margin:13px 0}.intro{color:var(--muted);font-size:14px;line-height:1.9;max-width:600px}.albums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 24px;margin-top:40px}.album-card{display:block;text-decoration:none}.album-cover{aspect-ratio:4/3;background:var(--soft);display:flex;align-items:center;justify-content:center;color:#807b72;font:italic 17px Georgia,serif;overflow:hidden}.album-cover img,.photo-grid img{width:100%;height:100%;object-fit:cover;display:block}.album-card:hover .album-cover{filter:brightness(.96)}.album-title{font:normal 24px Georgia,serif;margin:17px 0 6px}.meta{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);line-height:1.7}.about{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}footer{padding:40px 0 55px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px}.album-page{padding:70px 0 80px}.back{font-size:12px;text-decoration:none;letter-spacing:1px;color:var(--muted)}.album-page h1{font-size:clamp(44px,7vw,85px);letter-spacing:-3px;margin:30px 0 15px}.album-description{font:italic 19px/1.7 Georgia,serif;color:var(--muted);max-width:700px;margin:25px 0 45px}.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.photo-grid figure{margin:0}.photo-grid .photo-placeholder{aspect-ratio:4/5;background:var(--soft);display:flex;align-items:center;justify-content:center;color:#827d73;font:italic 16px Georgia,serif}.photo-grid figure.wide{grid-column:span 2}.photo-grid figure.wide .photo-placeholder{aspect-ratio:16/9}.photo-grid figure img{height:auto;aspect-ratio:4/5}.photo-grid figure.wide img{aspect-ratio:16/9}.empty{padding:35px;border:1px solid var(--line);color:var(--muted);line-height:1.8}.hidden{display:none!important}@media(max-width:650px){header{padding:22px 18px}nav{gap:13px}nav a{font-size:10px;letter-spacing:1px}main{padding:0 18px}.hero{padding:82px 0 60px}h1{letter-spacing:-4px}.feature{height:260px}section{padding:64px 0}.albums{gap:28px 13px}.album-title{font-size:19px}.album-cover{aspect-ratio:3/4}.photo-grid{gap:9px}footer{flex-direction:column}.album-page{padding:45px 0 65px}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="#top">XEN.</a><nav><a href="#moments">Moments</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+<main>
+<div id="home">
+<div class="hero" id="top"><div class="eyebrow">Photography &amp; personal archives</div><h1>XEN.</h1><p>A collection of moments.</p></div>
+<div class="feature" id="hero-photo">Your favorite photograph will go here.</div>
+<section id="moments"><div class="eyebrow">01 / The archive</div><h2>Moments worth keeping.</h2><p class="intro">A collection of days, places, and people I want to remember. Each little story has a place of its own.</p><div class="albums" id="album-list"></div></section>
+<section id="about" class="about"><div class="eyebrow">02 / A little about me</div><h2>Behind the camera.</h2><p class="intro">I'm Xen. I take photographs because some moments deserve to be remembered. This is my little corner of the internet to keep and share them.</p></section>
+<section id="contact"><div class="eyebrow">03 / Say hello</div><h2>Let's connect.</h2><p class="intro">Interested in a photo session or just want to say hello? Contact details coming soon.</p></section>
+</div>
+<div id="album-page" class="album-page hidden"><a class="back" href="#moments">← All moments</a><div class="eyebrow" style="margin-top:50px">XEN. / Moments worth keeping</div><h1 id="album-heading"></h1><div class="meta" id="album-meta"></div><p class="album-description" id="album-story"></p><div class="photo-grid" id="album-photos"></div></div>
+<footer><span>© <span id="year">2026</span> XEN.</span><span>Made with care · fromxen.github.io</span></footer>
+</main>
+<script>
+/* HOW TO PERSONALIZE:
+   1. Upload your optimized JPG photos to a folder named "photos" in this GitHub repository.
+   2. Replace the empty cover: "" and photo: "" values with paths like "photos/toronto-cover.jpg".
+   3. Duplicate an album object below for every new memory or event. Give each album a UNIQUE id.
+   4. Optional: set HERO_PHOTO to "photos/your-favorite.jpg".
+   Keep your original high-quality files backed up separately.
+*/
+const HERO_PHOTO = "";
+const ALBUMS = [
+  {
+    id:"afternoon-in-toronto",
+    title:"An Afternoon in Toronto",
+    location:"Toronto, Ontario",
+    date:"Fall 2026",
+    story:"A day in the city, with little moments worth remembering. Add your own story here — even one sentence is enough.",
+    cover:"",
+    photos:["","","",""]
+  }
+  // Add another album here, separated by a comma.
+];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safePhoto=s=>typeof s==='string' && /^(photos\/)[\w.\-/]+\.(jpe?g|png|webp)$/i.test(s) && !s.includes('..') ? s : '';
+function photoOrPlaceholder(path,label,cls=''){const src=safePhoto(path);return src?`<img src="${esc(src)}" alt="${esc(label)}" loading="lazy">`:`<div class="photo-placeholder ${cls}">${esc(label)}</div>`}
+function renderCards(){document.getElementById('album-list').innerHTML=ALBUMS.map(a=>`<a class="album-card" href="#album/${encodeURIComponent(a.id)}"><div class="album-cover">${safePhoto(a.cover)?`<img src="${esc(safePhoto(a.cover))}" alt="${esc(a.title)} album cover" loading="lazy">`:'Album cover photo'}</div><h3 class="album-title">${esc(a.title)}</h3><div class="meta">${esc(a.location)} · ${esc(a.date)} · ${a.photos.filter(Boolean).length||'Sample'} photos</div></a>`).join('')}
+function route(){const hash=decodeURIComponent(location.hash.slice(1));const album=hash.startsWith('album/')?ALBUMS.find(a=>a.id===hash.slice(6)):null;document.getElementById('home').classList.toggle('hidden',!!album);document.getElementById('album-page').classList.toggle('hidden',!album);if(album){document.title=`${album.title} — XEN.`;document.getElementById('album-heading').textContent=album.title;document.getElementById('album-meta').textContent=`${album.location} · ${album.date}`;document.getElementById('album-story').textContent=album.story;document.getElementById('album-photos').innerHTML=album.photos.map((p,i)=>`<figure class="${i===0?'wide':''}">${photoOrPlaceholder(p,`Photo ${i+1}`)}</figure>`).join('')||'<div class="empty">Photographs coming soon.</div>';window.scrollTo(0,0)}else{document.title='XEN. — A Collection of Moments';if(hash){setTimeout(()=>document.getElementById(hash)?.scrollIntoView(),0)}}}
+document.getElementById('year').textContent=new Date().getFullYear();renderCards();if(safePhoto(HERO_PHOTO)){const hero=document.getElementById('hero-photo');hero.style.backgroundImage=`url("${safePhoto(HERO_PHOTO)}")`;hero.textContent='';hero.classList.add('has-photo')}window.addEventListener('hashchange',route);route();
+</script>
+</body></html>
