@@ -10,7 +10,7 @@
 /* Featured photograph: show the entire original portrait, never crop it. */
 .feature{height:auto;min-height:0;padding:0;background:transparent;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .feature.has-photo{color:inherit;text-shadow:none}
-.feature img{display:block;width:auto;max-width:100%;height:auto;max-height:720px;object-fit:contain;image-rendering:auto}
+.feature img{display:block;width:100%;max-width:420px;height:auto;max-height:none;object-fit:contain;image-rendering:auto}
 @media(max-width:650px){.feature{height:auto;padding:0}.feature img{width:100%;height:auto;max-height:none}}
 </style>
 </head>
@@ -32,10 +32,10 @@
    1. Upload your JPG photos to a folder named "photos" in this GitHub repository.
    2. Replace the empty cover: "" and add photo paths inside photos:[], e.g. photos:["photos/toronto-01.jpg"].
    3. Duplicate an album object below for every new memory or event. Give each album a UNIQUE id.
-   4. Optional: set HERO_PHOTO to "photos/your-favorite.jpg".
+   4. The homepage portrait is photos/xen-portrait.jpg. Upload that file to the photos folder.
    Keep your original high-quality files backed up separately.
 */
-const HERO_PHOTO = "photos/Photo 1.jpg";
+const HERO_PHOTO = "photos/xen-portrait.jpg";
 const ALBUMS = [
   {
     id:"a-weekend-in-toronto",
@@ -64,6 +64,6 @@ const safePhoto=s=>typeof s==='string' && /^(photos\/)[\w.\-/ ]+\.(jpe?g|png|web
 function photoOrPlaceholder(path,label,cls=''){const src=safePhoto(path);return src?`<img src="${esc(src)}" alt="${esc(label)}" loading="lazy">`:`<div class="photo-placeholder ${cls}">${esc(label)}</div>`}
 function renderCards(){document.getElementById('album-list').innerHTML=ALBUMS.map(a=>`<a class="album-card" href="#album/${encodeURIComponent(a.id)}"><div class="album-cover">${safePhoto(a.cover)?`<img src="${esc(safePhoto(a.cover))}" alt="${esc(a.title)} album cover" loading="lazy">`:'Album cover photo'}</div><h3 class="album-title">${esc(a.title)}</h3><div class="meta">${esc(a.location)} · ${esc(a.date)} · ${a.photos.filter(Boolean).length ? `${a.photos.filter(Boolean).length} photos` : 'Photos coming soon'}</div></a>`).join('')}
 function route(){const hash=decodeURIComponent(location.hash.slice(1));const album=hash.startsWith('album/')?ALBUMS.find(a=>a.id===hash.slice(6)):null;document.getElementById('home').classList.toggle('hidden',!!album);document.getElementById('album-page').classList.toggle('hidden',!album);if(album){document.title=`${album.title} — XEN.`;document.getElementById('album-heading').textContent=album.title;document.getElementById('album-meta').textContent=`${album.location} · ${album.date}`;document.getElementById('album-story').textContent=album.story;document.getElementById('album-photos').innerHTML=album.photos.map((p,i)=>`<figure class="">${photoOrPlaceholder(p,`Photo ${i+1}`)}</figure>`).join('')||'<div class="empty">Photographs coming soon.</div>';window.scrollTo(0,0)}else{document.title='XEN. — A Collection of Moments';if(hash){setTimeout(()=>document.getElementById(hash)?.scrollIntoView(),0)}}}
-document.getElementById('year').textContent=new Date().getFullYear();renderCards();if(safePhoto(HERO_PHOTO)){const hero=document.getElementById('hero-photo');hero.textContent='';const photo=document.createElement('img');photo.src=safePhoto(HERO_PHOTO);photo.alt='Featured photograph from A Weekend in Toronto';photo.loading='eager';photo.decoding='async';hero.appendChild(photo);hero.classList.add('has-photo')}window.addEventListener('hashchange',route);route();
+document.getElementById('year').textContent=new Date().getFullYear();renderCards();if(safePhoto(HERO_PHOTO)){const hero=document.getElementById('hero-photo');hero.textContent='';const photo=document.createElement('img');photo.src=safePhoto(HERO_PHOTO);photo.alt='Portrait of Xen outdoors';photo.loading='eager';photo.decoding='async';hero.appendChild(photo);hero.classList.add('has-photo')}window.addEventListener('hashchange',route);route();
 </script>
 </body></html>
