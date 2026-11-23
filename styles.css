@@ -24,7 +24,7 @@ img{max-width:100%}
 .navigation a::after{content:'';position:absolute;left:0;right:0;bottom:3px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:center;transition:transform .2s}
 .navigation a:hover::after,.navigation a[aria-current="page"]::after{transform:scaleX(1)}
 /* Homepage introduction */
-.hero{text-align:center;padding:clamp(59px,7.8vw,100px) 0 clamp(52px,6vw,76px)}
+.hero{text-align:center;padding:clamp(59px,7.8vw,100px) 0 clamp(32px,4vw,48px)}
 .hero h1{font:500 clamp(70px,9vw,119px)/.9 var(--serif);letter-spacing:-.055em;margin:0 0 20px}
 .eyebrow{font:500 clamp(10px,1.1vw,12px)/1.75 var(--sans);letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
 .hero .eyebrow{letter-spacing:.18em;color:var(--ink)}
@@ -89,7 +89,7 @@ img{max-width:100%}
  .brand-icon img{width:49px;height:49px}
  .navigation{gap:26px}
  .navigation a{font-size:11px}
- .hero{padding:72px 0 63px}
+ .hero{padding:72px 0 35px}
  .hero h1{font-size:clamp(64px,15.5vw,89px);margin-bottom:18px}
  .hero .eyebrow{font-size:9px;letter-spacing:.10em}
  .hero-rule{margin:20px auto 13px;width:75px}
