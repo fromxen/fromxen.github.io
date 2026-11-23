@@ -1,40 +1,33 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Behind the lens. — FromXen</title>
-<meta name="description" content="Meet Xen, the photographer behind FromXen.">
-<link rel="icon" type="image/x-icon" href="favicon.ico?v=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f7f3">
+<title>Behind the lens. — fromxen.</title>
+<meta name="description" content="Meet Xen, the photographer behind fromxen., a personal photographic archive.">
 <link rel="canonical" href="https://fromxen.github.io/about.html">
+<link rel="icon" type="image/png" sizes="64x64" href="fromxen-favicon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="FromXen">
-<meta property="og:title" content="Behind the lens. — FromXen">
-<meta property="og:description" content="Meet Xen, the photographer behind FromXen.">
+<meta property="og:site_name" content="fromxen.">
+<meta property="og:title" content="Behind the lens. — fromxen.">
+<meta property="og:description" content="Meet Xen, the photographer behind fromxen., a personal photographic archive.">
 <meta property="og:url" content="https://fromxen.github.io/about.html">
 <meta property="og:image" content="https://fromxen.github.io/photos/xen-portrait.jpeg">
-<meta property="og:image:secure_url" content="https://fromxen.github.io/photos/xen-portrait.jpeg">
-<meta property="og:image:alt" content="Portrait of Xen outdoors">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://fromxen.github.io/photos/xen-portrait.jpeg">
-<style>
-:root{--paper:#f8f7f3;--ink:#25241f;--muted:#756f67;--line:#dfdcd5;--soft:#ebe8e2}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-a:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
-.site-header,.site-main,.site-footer{width:min(1110px,100%);margin-inline:auto;padding-inline:34px}
-.site-header{height:98px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
-.logo{font:700 33px/1 Georgia,'Times New Roman',serif;letter-spacing:-1.8px;text-decoration:none}
-.nav{display:flex;align-items:center;gap:34px}.nav a{text-decoration:none;text-transform:uppercase;font-size:11px;letter-spacing:1.7px;color:var(--muted);transition:color .2s}.nav a:hover,.nav a[aria-current=page]{color:var(--ink)}
-.eyebrow{font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);font-weight:600}
-.hero{padding:38px 0 42px;border-bottom:1px solid var(--line)}.hero h1,.page-head h1{font:normal clamp(34px,3.3vw,44px)/1.15 Georgia,'Times New Roman',serif;letter-spacing:-2.1px;margin:13px 0 15px;max-width:920px}.hero p{font:normal clamp(16px,1.85vw,18px)/1.7 Arial,Helvetica,sans-serif;color:#625e57;max-width:760px;margin:0}
-.section{padding:39px 0 64px}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:27px}.section-head h2{font:normal clamp(30px,3.1vw,39px)/1.15 Georgia,serif;letter-spacing:-1.4px;margin:12px 0 0}.archive-count{font-size:10px;color:var(--muted);letter-spacing:1.6px;text-transform:uppercase;white-space:nowrap}
-.album-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px 22px}.album-card{text-decoration:none;display:block;min-width:0}.album-image{width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--soft)}.album-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .4s ease,filter .4s ease}.album-card:hover .album-image img{transform:scale(1.018);filter:brightness(.98)}.album-topline{display:flex;justify-content:space-between;align-items:center;margin-top:17px;gap:12px}.album-number{font-size:10px;color:var(--muted);letter-spacing:1.7px}.album-arrow{color:var(--muted);font-size:19px;line-height:1}.album-card h3{font:normal clamp(21px,2.2vw,26px)/1.2 Georgia,serif;letter-spacing:-.4px;margin:6px 0 10px}.meta{font-size:10px;letter-spacing:1.05px;text-transform:uppercase;color:var(--muted);line-height:1.8}
-.site-footer{border-top:1px solid var(--line);padding-top:29px;padding-bottom:42px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:var(--muted);font-size:11px;letter-spacing:.5px}.site-footer a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}.site-footer a:hover{border-color:currentColor}
-.page-head{padding:38px 0 26px}.page-head h1{font-size:clamp(34px,3.3vw,44px);letter-spacing:-1.5px;margin-bottom:0}.about-layout{display:grid;grid-template-columns:minmax(0,350px) minmax(0,1fr);gap:clamp(34px,5vw,68px);align-items:start;padding-bottom:66px}.portrait{width:100%;display:block;height:auto;object-fit:contain}.about-copy{max-width:490px;padding-top:8px}.about-copy p{font-size:16px;line-height:1.8;color:#514d47;margin:0 0 22px}.about-copy p:last-child{margin-bottom:0}
-.back-link{font-size:11px;letter-spacing:1px;text-decoration:none;color:var(--muted)}.back-link:hover{color:var(--ink)}.album-heading{padding:40px 0 31px}.album-heading .eyebrow{margin-top:30px}.album-heading h1{font:normal clamp(34px,3.3vw,44px)/1.15 Georgia,serif;letter-spacing:-1.5px;margin:12px 0 13px}.album-description{font-size:16px;line-height:1.75;color:#625e57;max-width:690px;margin:16px 0 0}.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:5px 0 66px}.photo-grid figure{margin:0;min-width:0}.photo-grid img{display:block;width:100%;height:auto;object-fit:contain}.gallery-bottom{border-top:1px solid var(--line);padding:28px 0 70px}
-@media(min-width:701px) and (max-width:900px){.album-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){.site-header,.site-main,.site-footer{padding-inline:20px}.site-header{height:78px}.logo{font-size:29px}.nav{gap:22px}.nav a{font-size:10px;letter-spacing:1.4px}.hero{padding:27px 0 32px}.hero h1{font-size:clamp(28px,7.5vw,34px);letter-spacing:-1.25px;margin:12px 0 14px}.hero p{font-size:16px;line-height:1.75}.section{padding:32px 0 57px}.section-head{margin-bottom:23px}.section-head h2{font-size:30px}.archive-count{font-size:9px}.album-grid{grid-template-columns:1fr;gap:36px}.album-card h3{font-size:24px}.site-footer{align-items:flex-start;flex-direction:column;gap:13px;padding-bottom:34px}.page-head{padding:29px 0 24px}.page-head h1{font-size:clamp(29px,7vw,34px);letter-spacing:-1px}.about-layout{grid-template-columns:1fr;gap:25px;padding-bottom:53px}.portrait{max-width:390px}.about-copy{padding-top:0}.about-copy p{font-size:15px}.album-heading{padding:30px 0 25px}.album-heading .eyebrow{margin-top:26px}.album-heading h1{font-size:clamp(29px,7vw,35px);letter-spacing:-1px}.album-description{font-size:15px}.photo-grid{grid-template-columns:minmax(0,1fr);gap:16px;padding-bottom:53px}.gallery-bottom{padding:23px 0 50px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.album-image img{transition:none}}
-</style>
-</head>
-<body><header class="site-header"><a class="logo" href="index.html" aria-label="FromXen homepage">XEN.</a><nav class="nav" aria-label="Main navigation"><a href="index.html#archive" >Moments</a><a href="about.html" aria-current="page">About</a></nav></header><main class="site-main"><div class="page-head"><div class="eyebrow">About / Xen</div><h1>Behind the lens.</h1></div><section class="about-layout" aria-label="About Xen"><img class="portrait" src="photos/xen-portrait.jpeg" alt="Portrait of Xen outdoors" fetchpriority="high"><div class="about-copy"><p>I'm Xen. Photography has always been something I've enjoyed. I like capturing the people around me, places I visit, and little things that catch my attention.</p><p>Nothing too serious. Just something I enjoy doing and a place to share what I've captured.</p></div></section></main><footer class="site-footer"><span>© 2026 FROMXEN</span><a href="https://www.instagram.com/xenfams/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></footer></body></html>
+</head><body><header class="site-header">
+  <a class="brand-icon" href="index.html" aria-label="fromxen. home"><img src="fromxen-logo-B-web.png" width="68" height="68" alt="fromxen. X and camera monogram"></a>
+  <nav class="navigation" aria-label="Main navigation">
+    <a href="index.html#archive">Moments</a>
+    <a href="about.html" aria-current="page">About</a>
+  </nav>
+</header>
+<main class="site-main">
+  <div class="page-head"><div class="eyebrow">About / Xen</div><h1>Behind the lens.</h1></div>
+  <section aria-label="About Xen" class="about-layout"><img alt="Portrait of Xen outdoors" class="portrait" fetchpriority="high" src="photos/xen-portrait.jpeg"/><div class="about-copy"><p>I'm Xen. Photography has always been something I've enjoyed. I like capturing the people around me, places I visit, and little things that catch my attention.</p><p>Nothing too serious. Just something I enjoy doing and a place to share what I've captured.</p></div></section>
+</main><footer class="site-footer"><p>© 2026 fromxen. All rights reserved.</p></footer></body></html>
