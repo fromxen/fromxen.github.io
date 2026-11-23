@@ -50,10 +50,10 @@ img{max-width:100%}
 .collection-count{font:500 11px/1.5 var(--sans);color:var(--muted);letter-spacing:.04em}
 .album-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .album-card{text-decoration:none;display:block;min-width:0}
-/* Archive thumbnails: preserve the full original photograph (no forced landscape crop). */
-.album-image{background:#eae5dc;aspect-ratio:auto;overflow:hidden}
-.album-image img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;transition:filter .25s ease}
-.album-card:hover img{filter:brightness(.985)}
+/* Archive thumbnails: clean landscape cards with focal-point crop so portraits still look good. */
+.archive .album-image{background:#eae5dc;aspect-ratio:16/9;overflow:hidden}
+.archive .album-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 19%;transition:filter .25s ease,transform .35s ease}
+.album-card:hover img{filter:brightness(.985);transform:scale(1.012)}
 .album-card h3{font:500 clamp(23px,2.3vw,27px)/1.2 var(--serif);margin:12px 0 3px;letter-spacing:-.015em}
 .album-card .meta{font:400 12px/1.65 var(--sans);color:var(--muted)}
 /* Page variants */
@@ -104,7 +104,7 @@ img{max-width:100%}
  .section-head h2{font-size:42px}
  .album-grid{grid-template-columns:1fr;gap:32px}
  .album-card h3{font-size:27px}
- .album-image{aspect-ratio:auto}
+ .archive .album-image{aspect-ratio:16/9}
  .page-head{padding:57px 0 30px}
  .page-head h1,.album-heading h1{font-size:clamp(49px,12vw,65px)}
  .about-layout{grid-template-columns:1fr;gap:28px;padding-bottom:75px}
