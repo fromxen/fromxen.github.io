@@ -16,3 +16,7 @@
 .viewer-caption{text-align:center;font-size:12px;padding:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:830px){.masonry-gallery{columns:2}}
 @media(max-width:640px){.navigation{gap:17px}.masonry-gallery{column-gap:8px;padding-bottom:55px}.masonry-gallery a{margin-bottom:8px}.viewer-stage{grid-template-columns:32px minmax(0,1fr) 32px}.viewer-stage button{min-width:32px}}
+
+/* Progressive enhancement: balance by actual image aspect ratio. */
+.masonry-gallery.balanced-masonry{display:grid;columns:auto;grid-auto-rows:1px;align-items:start;row-gap:0}
+.masonry-gallery.balanced-masonry a{margin:0;min-width:0}
