@@ -1,5 +1,5 @@
 .gallery-heading{text-align:center;padding:clamp(48px,7vw,90px) 0 clamp(35px,5vw,60px)}
-.gallery-heading h1{font:500 clamp(52px,8vw,94px)/1 var(--serif);letter-spacing:-.045em;margin:14px 0 0}
+.gallery-heading h1{font:500 clamp(40px,6vw,72px)/1 var(--serif);letter-spacing:-.045em;margin:14px 0 0}
 .gallery-heading p{font:italic 400 clamp(20px,2.5vw,28px)/1.4 var(--serif);color:var(--muted);margin:0}
 .masonry-gallery{columns:3;column-gap:12px;padding-bottom:80px}
 .masonry-gallery a{display:block;break-inside:avoid;margin:0 0 12px;cursor:zoom-in}
