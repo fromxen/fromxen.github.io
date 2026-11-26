@@ -116,3 +116,6 @@ img{max-width:100%}
  .gallery-bottom{padding:23px 0 45px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto} *,*::before,*::after{transition:none!important}}
+
+/* Keep the three navigation links comfortable on narrow screens. */
+@media(max-width:640px){.navigation{gap:17px}}
