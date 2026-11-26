@@ -25,7 +25,7 @@ img{max-width:100%}
 .navigation a:hover::after,.navigation a[aria-current="page"]::after{transform:scaleX(1)}
 /* Homepage introduction */
 .hero{text-align:center;padding:clamp(59px,7.8vw,100px) 0 clamp(32px,4vw,48px)}
-.hero h1{font:500 clamp(70px,9vw,119px)/.9 var(--serif);letter-spacing:-.055em;margin:0 0 20px}
+.hero h1{font:500 clamp(56px,7vw,92px)/.9 var(--serif);letter-spacing:-.055em;margin:0 0 20px}
 .eyebrow{font:500 clamp(10px,1.1vw,12px)/1.75 var(--sans);letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
 .hero .eyebrow{letter-spacing:.18em;color:var(--ink)}
 .hero-rule{width:115px;height:1px;background:var(--line);margin:25px auto 16px}
@@ -58,7 +58,7 @@ img{max-width:100%}
 .album-card .meta{font:400 12px/1.65 var(--sans);color:var(--muted)}
 /* Page variants */
 .page-head{padding:75px 0 39px}
-.page-head h1,.album-heading h1{font:500 clamp(56px,7.5vw,94px)/1 var(--serif);letter-spacing:-.045em;margin:14px 0 10px}
+.page-head h1,.album-heading h1{font:500 clamp(44px,6vw,72px)/1 var(--serif);letter-spacing:-.045em;margin:14px 0 10px}
 .about-layout{display:grid;grid-template-columns:minmax(0,390px) minmax(0,1fr);gap:clamp(30px,7vw,93px);align-items:center;padding-bottom:110px}
 .portrait{width:100%;height:auto;display:block;object-fit:cover}
 .about-copy{max-width:490px}
@@ -90,7 +90,7 @@ img{max-width:100%}
  .navigation{gap:26px}
  .navigation a{font-size:11px}
  .hero{padding:72px 0 35px}
- .hero h1{font-size:clamp(64px,15.5vw,89px);margin-bottom:18px}
+ .hero h1{font-size:clamp(50px,12vw,70px);margin-bottom:18px}
  .hero .eyebrow{font-size:9px;letter-spacing:.10em}
  .hero-rule{margin:20px auto 13px;width:75px}
  .hero-tagline{font-size:clamp(23px,6vw,31px)}
@@ -106,7 +106,7 @@ img{max-width:100%}
  .album-card h3{font-size:27px}
  .archive .album-image{aspect-ratio:16/9}
  .page-head{padding:57px 0 30px}
- .page-head h1,.album-heading h1{font-size:clamp(49px,12vw,65px)}
+ .page-head h1,.album-heading h1{font-size:clamp(38px,9.5vw,51px)}
  .about-layout{grid-template-columns:1fr;gap:28px;padding-bottom:75px}
  .portrait{max-width:400px}
  .about-copy p{font-size:15px}
