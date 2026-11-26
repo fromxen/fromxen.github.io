@@ -33,8 +33,43 @@ def variants(src):
         cache[p] = (w,h,entries)
         return cache[p]
 
+# Build the gallery from published album pages, not unreferenced uploads.
+gallery_path = out / "gallery.html"
+if gallery_path.exists():
+    gallery = BeautifulSoup(gallery_path.read_text(encoding="utf-8"), "html.parser")
+    grid = gallery.select_one("#all-photos")
+    albums = []
+    for page in sorted(out.glob("*.html")):
+        album = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
+        heading = album.select_one(".album-heading .eyebrow")
+        photos = album.select(".photo-grid img[src]")
+        if heading and photos:
+            albums.append((heading.get_text(strip=True), photos))
+    seen = set()
+    for _, photos in sorted(albums, key=lambda item: item[0], reverse=True):
+        for photo in photos:
+            src = photo["src"]
+            if not src.startswith("photos/") or src in seen:
+                continue
+            seen.add(src)
+            link = gallery.new_tag("a", href=src)
+            img = gallery.new_tag("img", src=src, alt=photo.get("alt", "Photograph"), loading="lazy", decoding="async")
+            if len(seen) == 1:
+                img["loading"] = "eager"
+                img["fetchpriority"] = "high"
+            link.append(img)
+            grid.append(link)
+    gallery_path.write_text(str(gallery), encoding="utf-8")
+
 for page in out.glob("*.html"):
     soup = BeautifulSoup(page.read_text(encoding="utf-8"),"html.parser")
+    nav = soup.select_one(".navigation")
+    if nav and not nav.find("a", href="gallery.html"):
+        about = nav.find("a", href="about.html")
+        if about:
+            link = soup.new_tag("a", href="gallery.html")
+            link.string = "Gallery"
+            about.insert_before(link)
     for img in soup.find_all("img",src=True):
         src = img["src"]
         if not src.startswith("photos/"):
@@ -43,7 +78,10 @@ for page in out.glob("*.html"):
         img["width"],img["height"] = str(w),str(h)
         img["src"] = entries[-1][0]
         img["srcset"] = ", ".join(f"{url} {width}w" for url,width in entries)
-        if img.find_parent(class_="featured-image"):
+        if img.find_parent(class_="masonry-gallery"):
+            img["sizes"] = "(max-width: 830px) 46vw, (max-width: 1220px) 31vw, 375px"
+            img.parent["href"] = entries[-1][0]
+        elif img.find_parent(class_="featured-image"):
             img["sizes"] = "(max-width: 640px) calc(100vw - 40px), (max-width: 830px) 45vw, 740px"
         elif img.find_parent(class_="album-image"):
             img["sizes"] = "(max-width: 640px) calc(100vw - 40px), (max-width: 830px) 45vw, 390px"
