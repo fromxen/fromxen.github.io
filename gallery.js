@@ -1,5 +1,32 @@
 (() => {
   const links = Array.from(document.querySelectorAll('.masonry-gallery a'));
+  const grid = document.querySelector('.masonry-gallery');
+  if (grid && links.length && 'ResizeObserver' in window) {
+    grid.classList.add('balanced-masonry');
+    let previousWidth = -1;
+    const layout = () => {
+      const width = grid.clientWidth;
+      if (!width || width === previousWidth) return;
+      previousWidth = width;
+      const columns = window.matchMedia('(max-width: 830px)').matches ? 2 : 3;
+      const gap = window.matchMedia('(max-width: 640px)').matches ? 8 : 12;
+      const columnWidth = (width - gap * (columns - 1)) / columns;
+      grid.style.gridTemplateColumns = 'repeat(' + columns + ', minmax(0, 1fr))';
+      grid.style.columnGap = gap + 'px';
+      const heights = Array(columns).fill(1);
+      for (const link of links) {
+        const img = link.querySelector('img');
+        const ratio = Number(img.getAttribute('height')) / Number(img.getAttribute('width'));
+        const span = Math.max(1, Math.ceil(columnWidth * (Number.isFinite(ratio) && ratio > 0 ? ratio : 1) + gap));
+        const col = heights.indexOf(Math.min(...heights));
+        link.style.gridColumn = String(col + 1);
+        link.style.gridRow = heights[col] + ' / span ' + span;
+        heights[col] += span;
+      }
+    };
+    layout();
+    new ResizeObserver(layout).observe(grid);
+  }
   if (!links.length || !('showModal' in HTMLDialogElement.prototype)) return;
   const dialog = document.createElement('dialog');
   dialog.className = 'photo-viewer';
